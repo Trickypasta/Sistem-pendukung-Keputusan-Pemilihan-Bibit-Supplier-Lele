@@ -65,11 +65,11 @@ Proyek ini terdiri dari 2 folder: `backend_api` dan `frontend_react`. Keduanya h
 
 1.  **Clone repository ini:**
     ```bash
-    git clone [URL_GITHUB_LU_NANTI]
+    git clone https://github.com/Trickypasta/Sistem-pendukung-Keputusan-Pemilihan-Bibit-Supplier-Lele.git
     ```
 2.  **Masuk ke folder backend:**
     ```bash
-    cd spkjri/backend_api
+    cd /backend_api
     ```
 3.  **Install dependensi PHP:**
     ```bash
