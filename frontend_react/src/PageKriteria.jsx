@@ -100,19 +100,15 @@ export default function PageKriteria() {
 
   const isBobotValid = totalBobot.toFixed(2) === "1.00";
 
-  // --- TAMPILAN (JSX) ---
   return (
     <div className="p-6">
-      {/* Kartu putih 1: Form Tambah/Edit Data */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <h1 className="text-2xl font-bold mb-4">
           {editingId ? "Edit Data Kriteria" : "Tambah Data Kriteria"}
         </h1>
 
-        {/* Form */}
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {/* Input Kode */}
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Kode Kriteria
@@ -132,7 +128,6 @@ export default function PageKriteria() {
               )}
             </div>
 
-            {/* Input Nama */}
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Nama Kriteria
@@ -152,7 +147,6 @@ export default function PageKriteria() {
               )}
             </div>
 
-            {/* Input Atribut */}
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Atribut
@@ -179,7 +173,6 @@ export default function PageKriteria() {
               )}
             </div>
 
-            {/* Input Bobot */}
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Bobot (0-1)
@@ -200,7 +193,6 @@ export default function PageKriteria() {
               )}
             </div>
 
-            {/* Input Unit (Satuan) */}
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Satuan Nilai (Unit)
@@ -236,7 +228,6 @@ export default function PageKriteria() {
         </form>
       </div>
 
-      {/* Kartu putih 2: Tabel List Data */}
       <div className="bg-white p-6 rounded-lg shadow-md">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl font-bold">List Data Kriteria</h1>
@@ -260,20 +251,16 @@ export default function PageKriteria() {
           )}
         </div>
 
-        {/* (1) ▼▼▼ MULAI MAKEOVER TABEL ▼▼▼ */}
         <div className="overflow-x-auto">
           {" "}
-          {/* (2) Bungkus tabel biar bisa scroll kalo gak muat */}
           {kriteriaList.length === 0 ? (
             <div className="text-center text-gray-500 py-10">
               <p className="text-lg">Belum ada data kriteria.</p>
               <p>Silakan tambahkan data baru menggunakan form di atas.</p>
             </div>
           ) : (
-            // (3) Hapus 'border-collapse border'
             <table className="w-full mt-4 min-w-[700px]">
               <thead>
-                {/* (4) Ganti styling header */}
                 <tr className="bg-gray-50">
                   <th className="p-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                     Kode
@@ -295,11 +282,10 @@ export default function PageKriteria() {
                   </th>
                 </tr>
               </thead>
-              {/* (5) Ganti styling body */}
               <tbody className="divide-y divide-gray-200">
                 {kriteriaList.map((kriteria) => (
                   <tr key={kriteria.id} className="hover:bg-gray-50">
-                    {/* (6) Ganti styling cell */}
+              ]
                     <td className="p-3 whitespace-nowrap text-sm text-gray-700">
                       {kriteria.kode_kriteria}
                     </td>
@@ -335,7 +321,6 @@ export default function PageKriteria() {
             </table>
           )}
         </div>
-        {/* (7) ▲▲▲ SELESAI MAKEOVER TABEL ▲▲▲ */}
       </div>
     </div>
   );

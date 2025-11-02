@@ -66,10 +66,8 @@ class AlternatifController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // 1. Cari datanya
         $alternatif = Alternatif::find($id);
 
-        // 2. Kalo gak nemu
         if (!$alternatif) {
             return response()->json([
                 'success' => false,
@@ -77,7 +75,6 @@ class AlternatifController extends Controller
             ], 404);
         }
 
-        // 3. Buat aturan validasi
         $validator = Validator::make($request->all(), [
             // Cek 'unique', tapi 'ignore' ID dia sendiri
             'nama_supplier' => 'required|string|unique:alternatifs,nama_supplier,' . $id . '|max:255',

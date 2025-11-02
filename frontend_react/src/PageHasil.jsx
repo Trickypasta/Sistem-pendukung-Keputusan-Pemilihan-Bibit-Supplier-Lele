@@ -56,7 +56,6 @@ export default function PageHasil() {
     setModalPeringkat(null);
   };
 
-  // --- TAMPILAN (JSX) ---
   return (
     <div className="p-6">
       <div className="bg-white p-6 rounded-lg shadow-md">
@@ -70,8 +69,6 @@ export default function PageHasil() {
             {isLoading ? "Menghitung..." : "Hitung Ulang"}
           </button>
         </div>
-
-        {/* (1) ▼▼▼ MULAI MAKEOVER TABEL UTAMA ▼▼▼ */}
         <div className="overflow-x-auto">
           <table className="w-full mt-4 min-w-[600px]">
             <thead>
@@ -115,10 +112,8 @@ export default function PageHasil() {
             </tbody>
           </table>
         </div>
-        {/* (2) ▲▲▲ SELESAI MAKEOVER TABEL UTAMA ▲▲▲ */}
       </div>
 
-      {/* MODAL (POP-UP) RINCIAN PERHITUNGAN */}
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" // (3) Tambahin padding p-4
@@ -166,7 +161,6 @@ export default function PageHasil() {
                       Rincian Perhitungan: {modalData.nama_supplier}
                     </h2>
 
-                    {/* Blok Rekomendasi */}
                     <div className="bg-blue-50 p-4 rounded-lg my-4 border border-blue-200">
                       <h3 className="font-bold text-lg text-blue-800">
                         {teksRekomendasi}
@@ -190,8 +184,6 @@ export default function PageHasil() {
                         {modalData.nilai_akhir.toFixed(4)}
                       </strong>
                     </p>
-
-                    {/* (5) ▼▼▼ MAKEOVER TABEL RINCIAN ▼▼▼ */}
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm mt-4 min-w-[600px]">
                         <thead>
@@ -239,7 +231,6 @@ export default function PageHasil() {
                         </tbody>
                       </table>
                     </div>
-                    {/* (6) ▲▲▲ SELESAI MAKEOVER TABEL RINCIAN ▲▲▲ */}
 
                     <button
                       onClick={closeModal}

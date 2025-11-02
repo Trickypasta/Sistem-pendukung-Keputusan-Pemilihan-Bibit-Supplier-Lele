@@ -67,7 +67,6 @@ export default function PagePenilaian() {
           input (onBlur).
         </p>
 
-        {/* (1) ▼▼▼ MULAI MAKEOVER TABEL PENILAIAN ▼▼▼ */}
         <div className="overflow-x-auto">
           {kriteria.length === 0 || alternatif.length === 0 ? (
             <div className="text-center text-gray-500 py-10">
@@ -90,7 +89,7 @@ export default function PagePenilaian() {
                     >
                       {k.kode_kriteria} ({k.atribut})
                       <span className="block text-xs font-normal text-blue-600 mt-1">
-                        ({k.unit || "N/A"}) {/* <-- Tampilkan unit/satuan */}
+                        ({k.unit || "N/A"})
                       </span>
                     </th>
                   ))}
@@ -107,11 +106,9 @@ export default function PagePenilaian() {
                       return (
                         <td key={key} className="p-2 whitespace-nowrap text-sm">
                           {" "}
-                          {/* (2) Ganti p-1 jadi p-2 biar lebih lega */}
                           <input
                             type="number"
-                            step="any" // (3) Izinin desimal berapapun
-                            // (4) Styling input biar lebih rapi
+                            step="any" 
                             className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center"
                             placeholder="0"
                             value={nilaiMap[key] || ""}
@@ -129,7 +126,6 @@ export default function PagePenilaian() {
             </table>
           )}
         </div>
-        {/* (5) ▲▲▲ SELESAI MAKEOVER TABEL PENILAIAN ▲▲▲ */}
       </div>
     </div>
   );

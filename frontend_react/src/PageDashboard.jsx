@@ -27,10 +27,8 @@ export default function PageDashboard() {
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Dashboard</h1>
 
-      {/* (1) ▼▼▼ MAKEOVER KARTU STATISTIK ▼▼▼ */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Kartu 1: Total Kriteria */}
-        {/* Kita ganti shadow-md jadi shadow-lg dan p-6 biar konsisten */}
+
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <div className="flex items-center space-x-4">
             <div className="p-3 rounded-full bg-blue-100">
@@ -49,8 +47,6 @@ export default function PageDashboard() {
             </div>
           </div>
         </div>
-
-        {/* Kartu 2: Total Alternatif */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <div className="flex items-center space-x-4">
             <div className="p-3 rounded-full bg-green-100">
@@ -70,9 +66,8 @@ export default function PageDashboard() {
           </div>
         </div>
       </div>
-      {/* ▲▲▲ SELESAI MAKEOVER KARTU STATISTIK ▲▲▲ */}
+    
 
-      {/* Kartu Panduan (Styling-nya udah oke) */}
       <div className="bg-white p-6 rounded-lg shadow-lg mt-6">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">
           Panduan Penggunaan SPK

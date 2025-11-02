@@ -92,13 +92,11 @@ export default function PageAlternatif() {
 
   return (
     <div className="p-6">
-      {/* Kartu putih 1: Form Tambah/Edit Data */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <h1 className="text-2xl font-bold mb-4">
           {editingId ? "Edit Data Supplier" : "Tambah Data Supplier"}
         </h1>
 
-        {/* Form */}
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="md:col-span-2">
@@ -142,11 +140,9 @@ export default function PageAlternatif() {
         </form>
       </div>
 
-      {/* Kartu putih 2: Tabel List Data */}
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h1 className="text-2xl font-bold mb-4">List Data Alternatif</h1>
 
-        {/* (1) ▼▼▼ MULAI MAKEOVER TABEL ▼▼▼ */}
         <div className="overflow-x-auto">
           {alternatifList.length === 0 ? (
             <div className="text-center text-gray-500 py-10">
@@ -197,7 +193,6 @@ export default function PageAlternatif() {
             </table>
           )}
         </div>
-        {/* (2) ▲▲▲ SELESAI MAKEOVER TABEL ▲▲▲ */}
       </div>
     </div>
   );
