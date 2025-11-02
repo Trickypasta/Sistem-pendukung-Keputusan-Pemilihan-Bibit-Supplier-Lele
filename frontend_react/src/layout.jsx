@@ -1,37 +1,48 @@
 import { Outlet, NavLink } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// --- (1) KITA UPGRADE STYLING LINKNYA ---
-const baseClass =
-  "flex items-center space-x-3 rounded-md p-2 text-gray-600 hover:bg-gray-100";
-const activeClass =
-  "flex items-center space-x-3 rounded-md p-2 text-white bg-blue-600 font-semibold shadow-md";
-
+// --- Styling Link (Sama kayak sebelumnya) ---
+const baseClass = "flex items-center space-x-3 rounded-md p-2 text-gray-600 hover:bg-gray-100";
+const activeClass = "flex items-center space-x-3 rounded-md p-2 text-white bg-blue-600 font-semibold shadow-md";
 const getNavLinkClass = ({ isActive }) => (isActive ? activeClass : baseClass);
 
 export default function Layout() {
   return (
-    // (2) ▼▼▼ BODY UTAMA SEKARANG ABU-ABU MUDA (dari index.html) ▼▼▼
     <div className="flex h-screen">
+      
       {/* Container Toast (udah ada) */}
-      <ToastContainer position="top-right" autoClose={3000} theme="light" />
-
-      {/* (3) ▼▼▼ SIDEBAR JADI PUTIH & BERSIH ▼▼▼ */}
+      <ToastContainer 
+        position="top-right"
+        autoClose={3000}
+        theme="light"
+      />
+  
+      {/* Sidebar Putih (udah ada) */}
       <div className="w-64 bg-white border-r border-gray-200 p-5 flex flex-col shadow-lg">
-        {/* (4) ▼▼▼ "LOGO" PALSU KITA (IKON + NAMA) ▼▼▼ */}
-        <div className="flex items-center space-x-2 mb-8">
-          {/* NOTE: Kita pake 'class' bukan 'className' karena <ion-icon> 
-            itu 'Web Component', bukan komponen React asli.
-          */}
-          <ion-icon
-            name="fish-outline"
-            class="text-3xl text-blue-600"
+        
+        {/* (1) ▼▼▼ "LOGO" BARU (IKON DI ATAS TEKS) ▼▼▼ */}
+        <div className="flex flex-col items-center text-center space-y-2 mb-8">
+          {/* Ikon Ikan (Kita besarin dikit) */}
+          <ion-icon 
+            name="fish-outline" 
+            class="text-5xl text-blue-600"
           ></ion-icon>
-          <span className="text-xl font-bold text-gray-800">SPK Lele</span>
+          
+          {/* Teks Logo (2 baris) */}
+          <div>
+            <span className="block text-sm font-bold text-gray-800">
+              Sistem Pendukung Keputusan
+            </span>
+            <span className="block text-xs text-gray-600">
+              Pemilihan Supplier Bibit Lele
+            </span>
+          </div>
         </div>
+        {/* (2) ▲▲▲ SELESAI MAKEOVER LOGO ▲▲▲ */}
 
-        {/* (5) ▼▼▼ NAVIGASI + IKON ▼▼▼ */}
+
+        {/* Navigasi + Ikon (Sama kayak sebelumnya) */}
         <nav className="flex-grow">
           <ul className="space-y-2">
             <li>
@@ -66,9 +77,8 @@ export default function Layout() {
             </li>
           </ul>
         </nav>
-        {/* ▲▲▲ SAMPE SINI ▲▲▲ */}
 
-        {/* Footer Sidebar (Biar Keren) */}
+        {/* Footer Sidebar (Sama kayak sebelumnya) */}
         <div className="mt-auto">
           <p className="text-xs text-gray-400">© 2025 SPK Bibit Lele</p>
         </div>
@@ -76,10 +86,7 @@ export default function Layout() {
 
       {/* Konten Halaman (Jendelanya) */}
       <div className="flex-1 overflow-y-auto">
-        {/* Area konten ini udah otomatis bg-gray-100 
-          (dari index.html) jadi kartu putih lu bakal "nongol"
-        */}
-        <Outlet />
+        <Outlet /> 
       </div>
     </div>
   );

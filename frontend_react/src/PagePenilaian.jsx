@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function PagePenilaian() {
   const [kriteria, setKriteria] = useState([]);
@@ -10,7 +10,7 @@ export default function PagePenilaian() {
   const [nilaiMap, setNilaiMap] = useState({});
 
   useEffect(() => {
-    fetchDataPenilaian();
+    fetchDataPenilaian(); 
   }, []);
 
   const fetchDataPenilaian = async () => {
